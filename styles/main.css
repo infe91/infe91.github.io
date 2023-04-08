@@ -1,0 +1,129 @@
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+@font-face { /* BinggraeSamanco 폰트 적용 */
+  font-family: "BinggraeSamanco";
+  src: url("./font/BinggraeSamanco.ttf") format("truetype");
+  font-weight: normal;
+} /* 이후 "BinggraeSamanco"으로 폰트 적용 가능 */
+
+.map-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.map-icon {
+    width: 48px;
+    height: auto;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.kakaopay-icon{
+    width: auto;
+    height: 15px;
+}
+
+.groom-accout {
+    text-align : center;
+}
+
+
+
+* {
+    font-family: 'BinggraeSamanco', serif;
+}
+
+
+/** 캘린더 **/
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+td {
+	padding: 0;
+}
+
+.calendar-container {
+	position: relative;
+	width: auto;
+}
+
+.calendar-container header {
+	border-radius: 1em 1em 0 0;
+	background: #e66b6b;
+	color: #fff;
+	padding: 1em 1em;
+}
+
+.month {
+	font-size: 3em;
+	line-height: 1em;
+	text-transform: lowercase;
+    text-align: center;
+}
+
+.calendar {
+	background: #fff;
+	border-radius: 0 0 1em 1em;
+	-webkit-box-shadow: 0 2px 1px rgba(0, 0, 0, .2), 0 3px 1px #fff;
+	box-shadow: 0 2px 1px rgba(0, 0, 0, .2), 0 3px 1px #fff;
+	color: #555;
+	padding: auto;
+    width: 100%;
+}
+
+.calendar thead {
+	color: #e66b6b;
+	font-weight: 800;
+	text-transform: uppercase;
+}
+
+.calendar td {
+	padding: auto;
+	text-align: center;
+}
+
+
+.current-day {
+	color: white;
+    background-color: #e66b6b;
+    border-radius: 1%;
+}
+
+.prev-month,
+.next-month {
+	color: #cacaca;
+}
