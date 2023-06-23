@@ -101,7 +101,6 @@ td {
 	-webkit-box-shadow: 0 2px 1px rgba(0, 0, 0, .2), 0 3px 1px #fff;
 	box-shadow: 0 2px 1px rgba(0, 0, 0, .2), 0 3px 1px #fff;
 	color: #555;
-	padding: auto;
     width: 100%;
 }
 
@@ -112,7 +111,6 @@ td {
 }
 
 .calendar td {
-	padding: auto;
 	text-align: center;
 }
 
@@ -126,4 +124,18 @@ td {
 .prev-month,
 .next-month {
 	color: #cacaca;
+}
+
+
+#imageModal .modal-dialog {
+    max-width: 90vw; /* 모달의 최대 너비 설정 */
+}
+
+#imageModal .modal-body {
+    text-align: center;
+}
+
+#imageModal .modal-body img {
+    max-width: 100%;
+    height: auto;
 }

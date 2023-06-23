@@ -94,8 +94,8 @@
 
                 <div class="row text-center">
                     <p class="p text-center pb-1 ww-title"> 정병영ㆍ배경자 의 장남 인철 </p>
-                    <p class="p text-center pb-1 ww-title"> 이윤우ㆍ김경희 의 막내 희형 </p>
-                </div>
+                    <p class="p text-center pb-1 ww-title"> 이윤우ㆍ김경희 의 삼녀 희형 </p>
+                </div>내
             </div>
         </div>
 
@@ -227,6 +227,7 @@
         </div>
         </div>
 
+
         <!-- sixth-section -->
         <hr>
         <div class="ww-section" id="sixth-section">
@@ -238,31 +239,57 @@
 
                     <div class="card-group">
                         <div class="card">
-                            <img src="./images/gallery_01.png" class="card-img-top" alt="01">
+                            <img src="./images/IMG_0561.JPG" class="card-img-top" alt="01">
                         </div>
                         <div class="card">
-                            <img src="./images/gallery_02.png" class="card-img-top" alt="01">
+                            <img src="./images/IMG_0454.JPG" class="card-img-top" alt="01">
                         </div>
                         <div class="card">
-                            <img src="./images/gallery_03.png" class="card-img-top" alt="01">
+                            <img src="./images/IMG_0720.JPG" class="card-img-top" alt="01">
                         </div>
                     </div>
-
                     <div class="card-group">
                         <div class="card">
-                            <img src="./images/gallery_04.png" class="card-img-top" alt="01">
+                            <img src="./images/IMG_0730.JPG" class="card-img-top" alt="01">
                         </div>
                         <div class="card">
-                            <img src="./images/gallery_05.png" class="card-img-top" alt="01">
+                            <img src="./images/IMG_0735.JPG" class="card-img-top" alt="01">
                         </div>
                         <div class="card">
-                            <img src="./images/gallery_06.png" class="card-img-top" alt="01">
+                            <img src="./images/IMG_0773.JPG" class="card-img-top" alt="01">
+                        </div>
+                    </div>
+                    <div class="card-group">
+                        <div class="card">
+                            <img src="./images/IMG_0773.JPG" class="card-img-top" alt="01">
+                        </div>
+                        <div class="card">
+                            <img src="./images/IMG_0805.JPG" class="card-img-top" alt="01">
+                        </div>
+                        <div class="card">
+                            <img src="./images/IMG_0723.JPG" class="card-img-top" alt="01">
                         </div>
                     </div>
                 </div>
 
             </div>
         </div>
+
+        <!-- 이미지 모달 -->
+        <div id="imageModal" class="modal">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="" class="img-fluid" alt="모달 이미지">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
 
         <!-- seventh-section -->
         <div class="ww-section" id="seventh-section">
@@ -359,6 +386,52 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="./js/countdown-widget.js"></script>
     <script>
+
+        // 카드 클릭 이벤트 처리
+        $('.card').on('click', function() {
+            var imageUrl = $(this).find('.card-img-top').attr('src');
+            $('#imageModal img').attr('src', imageUrl);
+            $('#imageModal').modal('show');
+        });
+
+        // Close 버튼 클릭 이벤트 처리
+        $('#imageModal .btn-secondary').on('click', function() {
+            $('#imageModal').modal('hide');
+        });
+
+        // 모달 닫힐 때 이미지 초기화
+        $('#imageModal').on('hidden.bs.modal', function() {
+            $('#imageModal img').attr('src', '');
+        });
+
+        $(window).on('resize', function() {
+            adjustModalPosition();
+        });
+
+        $('#imageModal').on('shown.bs.modal', function() {
+            adjustModalPosition();
+        });
+
+        function adjustModalPosition() {
+            var windowHeight = $(window).height();
+            var windowWidth = $(window).width();
+            var modal = $('#imageModal');
+            var modalDialog = modal.find('.modal-dialog');
+
+            // 모달 창의 최대 높이 지정
+            modalDialog.css('max-height', windowHeight * 0.9);
+
+            // 모달 창의 위치 조정
+            var modalHeight = modalDialog.outerHeight();
+            var modalTop = Math.max((windowHeight - modalHeight) / 2, 0);
+            modalDialog.css('top', modalTop);
+
+            // 모달 창의 너비 조정
+            var modalWidth = modalDialog.outerWidth();
+            var modalLeft = Math.max((windowWidth - modalWidth) / 2, 0);
+            modalDialog.css('left', modalLeft);
+        }
+
         var groomAcoountCopy = function(){
 
             var groomAccount =  document.getElementById("groom-account");          
@@ -382,6 +455,8 @@
             document.execCommand("copy");
             document.body.removeChild(sampleTextarea);
         }
+
+
     </script>
 </body>
 
