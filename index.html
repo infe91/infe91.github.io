@@ -414,7 +414,6 @@
 
         function adjustModalPosition() {
             var windowHeight = $(window).height();
-            var windowWidth = $(window).width();
             var modal = $('#imageModal');
             var modalDialog = modal.find('.modal-dialog');
 
@@ -426,10 +425,6 @@
             var modalTop = Math.max((windowHeight - modalHeight) / 2, 0);
             modalDialog.css('top', modalTop);
 
-            // 모달 창의 너비 조정
-            var modalWidth = modalDialog.outerWidth();
-            var modalLeft = Math.max((windowWidth - modalWidth) / 2, 0);
-            modalDialog.css('left', modalLeft);
         }
 
         var groomAcoountCopy = function(){
