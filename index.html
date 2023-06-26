@@ -228,52 +228,90 @@
         </div>
 
 
-        <!-- sixth-section -->
-        <hr>
-        <div class="ww-section" id="sixth-section">
-            <!-- Gallery -->
+        <!-- test -->
+        <div class="ww-section" id="test-section">
             <div class="container">
                 <div class="ww-gallery">
 
-                    <h1 class="h1 text-center pb-3 ww-title">갤러리</h1>
+                    <h1 class="h1 text-center pb-3 ww-title">갤러리 test</h1>
+                    <div id="cardSlider" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="card">
+                                    <img src="./images/IMG_0561.JPG" class="card-img-top" alt="Image 1">
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card">
+                                    <img src="./images/IMG_0454.JPG" class="card-img-top" alt="Image 2">
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card">
+                                    <img src="./images/IMG_0720.JPG" class="card-img-top" alt="Image 3">
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#cardSlider" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#cardSlider" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
 
-                    <div class="card-group">
-                        <div class="card">
-                            <img src="./images/IMG_0561.JPG" class="card-img-top" alt="01">
-                        </div>
-                        <div class="card">
-                            <img src="./images/IMG_0454.JPG" class="card-img-top" alt="01">
-                        </div>
-                        <div class="card">
-                            <img src="./images/IMG_0720.JPG" class="card-img-top" alt="01">
-                        </div>
-                    </div>
-                    <div class="card-group">
-                        <div class="card">
-                            <img src="./images/IMG_0730.JPG" class="card-img-top" alt="01">
-                        </div>
-                        <div class="card">
-                            <img src="./images/IMG_0735.JPG" class="card-img-top" alt="01">
-                        </div>
-                        <div class="card">
-                            <img src="./images/IMG_0773.JPG" class="card-img-top" alt="01">
-                        </div>
-                    </div>
-                    <div class="card-group">
-                        <div class="card">
-                            <img src="./images/IMG_0773.JPG" class="card-img-top" alt="01">
-                        </div>
-                        <div class="card">
-                            <img src="./images/IMG_0805.JPG" class="card-img-top" alt="01">
-                        </div>
-                        <div class="card">
-                            <img src="./images/IMG_0723.JPG" class="card-img-top" alt="01">
-                        </div>
-                    </div>
                 </div>
-
             </div>
         </div>
+
+        <!-- sixth-section -->
+<!--        <hr>-->
+<!--        <div class="ww-section" id="sixth-section">-->
+<!--            &lt;!&ndash; Gallery &ndash;&gt;-->
+<!--            <div class="container">-->
+<!--                <div class="ww-gallery">-->
+
+<!--                    <h1 class="h1 text-center pb-3 ww-title">갤러리</h1>-->
+
+<!--                    <div class="card-group">-->
+<!--                        <div class="card">-->
+<!--                            <img src="./images/IMG_0561.JPG" class="card-img-top" alt="01">-->
+<!--                        </div>-->
+<!--                        <div class="card">-->
+<!--                            <img src="./images/IMG_0454.JPG" class="card-img-top" alt="01">-->
+<!--                        </div>-->
+<!--                        <div class="card">-->
+<!--                            <img src="./images/IMG_0720.JPG" class="card-img-top" alt="01">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="card-group">-->
+<!--                        <div class="card">-->
+<!--                            <img src="./images/IMG_0730.JPG" class="card-img-top" alt="01">-->
+<!--                        </div>-->
+<!--                        <div class="card">-->
+<!--                            <img src="./images/IMG_0735.JPG" class="card-img-top" alt="01">-->
+<!--                        </div>-->
+<!--                        <div class="card">-->
+<!--                            <img src="./images/IMG_0773.JPG" class="card-img-top" alt="01">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="card-group">-->
+<!--                        <div class="card">-->
+<!--                            <img src="./images/IMG_0773.JPG" class="card-img-top" alt="01">-->
+<!--                        </div>-->
+<!--                        <div class="card">-->
+<!--                            <img src="./images/IMG_0805.JPG" class="card-img-top" alt="01">-->
+<!--                        </div>-->
+<!--                        <div class="card">-->
+<!--                            <img src="./images/IMG_0723.JPG" class="card-img-top" alt="01">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--            </div>-->
+<!--        </div>-->
 
         <!-- 이미지 모달 -->
         <div id="imageModal" class="modal">
@@ -389,7 +427,7 @@
 
         // 카드 클릭 이벤트 처리
         $('.card').on('click', function() {
-            var imageUrl = $(this).find('.card-img-top').attr('src');
+            let imageUrl = $(this).find('.card-img-top').attr('src');
             $('#imageModal img').attr('src', imageUrl);
             $('#imageModal').modal('show');
         });
@@ -402,10 +440,6 @@
         // 모달 닫힐 때 이미지 초기화
         $('#imageModal').on('hidden.bs.modal', function() {
             $('#imageModal img').attr('src', '');
-        });
-
-        $(window).on('resize', function() {
-            adjustModalPosition();
         });
 
         $('#imageModal').on('shown.bs.modal', function() {
@@ -427,7 +461,10 @@
 
         }
 
-        var groomAcoountCopy = function(){
+
+
+
+        let groomAcoountCopy = function(){
 
             var groomAccount =  document.getElementById("groom-account");          
             copyToClipboard(groomAccount.value);
@@ -435,14 +472,14 @@
 
         }
 
-        var brideAcoountCopy = function(){
+        let brideAcoountCopy = function(){
             var brideAccount =  document.getElementById("bride-account");            
             copyToClipboard(brideAccount.value);
             alert("계좌번호가 복사되었습니다.");
 
         }
 
-        var copyToClipboard = function(text) {
+        let copyToClipboard = function(text) {
             var sampleTextarea = document.createElement("textarea");
             document.body.appendChild(sampleTextarea);
             sampleTextarea.value = text; 
@@ -450,6 +487,33 @@
             document.execCommand("copy");
             document.body.removeChild(sampleTextarea);
         }
+
+        // 카드 이미지 크기 조정
+        function adjustImageSize() {
+            var cardImages = document.querySelectorAll('.card-img-top');
+
+            cardImages.forEach(function(image) {
+                var card = image.closest('.card');
+                var windowHeight = window.innerHeight;
+                var targetHeight = windowHeight * 3 / 4;
+                image.style.maxHeight = targetHeight + 'px';
+            });
+        }
+        adjustModalPosition();
+        adjustImageSize();
+        // 초기 실행
+        // adjustImageSize();
+
+        // // 브라우저 리사이즈 시 카드 이미지 크기 조정
+        // window.addEventListener('resize', adjustImageSize);
+
+        // $(window).on('resize', function() {
+        //     adjustModalPosition();
+        //     adjustImageSize();
+        // });
+
+        window.addEventListener('resize', adjustModalPosition, adjustImageSize);
+
 
 
     </script>
