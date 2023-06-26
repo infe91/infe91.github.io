@@ -126,11 +126,6 @@ td {
 	color: #cacaca;
 }
 
-
-#imageModal .modal-dialog {
-    max-width: 90vw; /* 모달의 최대 너비 설정 */
-}
-
 #imageModal .modal-body {
     text-align: center;
 }
