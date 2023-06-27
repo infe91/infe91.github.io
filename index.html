@@ -227,16 +227,15 @@
         </div>
         </div>
 
-
-        <!-- test -->
-        <div class="ww-section" id="test-section">
+        <!-- sixth-section -->
+        <div class="ww-section" id="sixth-section">
             <div class="container">
                 <div class="ww-gallery">
 
-                    <h1 class="h1 text-center pb-3 ww-title">갤러리 test</h1>
-                    <div id="cardSlider" class="carousel slide" data-bs-ride="carousel">
+                    <h1 class="h1 text-center pb-3 ww-title">갤러리</h1>
+                    <div id="cardSlider" class="carousel slide carousel-fade" data-bs-touch="false">
                         <div class="carousel-inner">
-                            <div class="carousel-item active">
+                            <div class="carousel-item active" >
                                 <div class="card">
                                     <img src="./images/IMG_0561.JPG" class="card-img-top" alt="Image 1">
                                 </div>
@@ -265,53 +264,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- sixth-section -->
-<!--        <hr>-->
-<!--        <div class="ww-section" id="sixth-section">-->
-<!--            &lt;!&ndash; Gallery &ndash;&gt;-->
-<!--            <div class="container">-->
-<!--                <div class="ww-gallery">-->
-
-<!--                    <h1 class="h1 text-center pb-3 ww-title">갤러리</h1>-->
-
-<!--                    <div class="card-group">-->
-<!--                        <div class="card">-->
-<!--                            <img src="./images/IMG_0561.JPG" class="card-img-top" alt="01">-->
-<!--                        </div>-->
-<!--                        <div class="card">-->
-<!--                            <img src="./images/IMG_0454.JPG" class="card-img-top" alt="01">-->
-<!--                        </div>-->
-<!--                        <div class="card">-->
-<!--                            <img src="./images/IMG_0720.JPG" class="card-img-top" alt="01">-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="card-group">-->
-<!--                        <div class="card">-->
-<!--                            <img src="./images/IMG_0730.JPG" class="card-img-top" alt="01">-->
-<!--                        </div>-->
-<!--                        <div class="card">-->
-<!--                            <img src="./images/IMG_0735.JPG" class="card-img-top" alt="01">-->
-<!--                        </div>-->
-<!--                        <div class="card">-->
-<!--                            <img src="./images/IMG_0773.JPG" class="card-img-top" alt="01">-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="card-group">-->
-<!--                        <div class="card">-->
-<!--                            <img src="./images/IMG_0773.JPG" class="card-img-top" alt="01">-->
-<!--                        </div>-->
-<!--                        <div class="card">-->
-<!--                            <img src="./images/IMG_0805.JPG" class="card-img-top" alt="01">-->
-<!--                        </div>-->
-<!--                        <div class="card">-->
-<!--                            <img src="./images/IMG_0723.JPG" class="card-img-top" alt="01">-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-
-<!--            </div>-->
-<!--        </div>-->
 
         <!-- 이미지 모달 -->
         <div id="imageModal" class="modal">
@@ -447,40 +399,36 @@
         });
 
         function adjustModalPosition() {
-            var windowHeight = $(window).height();
-            var modal = $('#imageModal');
-            var modalDialog = modal.find('.modal-dialog');
+            let windowHeight = $(window).height();
+            let modal = $('#imageModal');
+            let modalDialog = modal.find('.modal-dialog');
 
             // 모달 창의 최대 높이 지정
             modalDialog.css('max-height', windowHeight * 0.9);
 
             // 모달 창의 위치 조정
-            var modalHeight = modalDialog.outerHeight();
-            var modalTop = Math.max((windowHeight - modalHeight) / 2, 0);
+            let modalHeight = modalDialog.outerHeight();
+            let modalTop = Math.max((windowHeight - modalHeight) / 2, 0);
             modalDialog.css('top', modalTop);
 
         }
-
-
-
-
         let groomAcoountCopy = function(){
 
-            var groomAccount =  document.getElementById("groom-account");          
+            let groomAccount =  document.getElementById("groom-account");
             copyToClipboard(groomAccount.value);
             alert("계좌번호가 복사되었습니다.");
 
         }
 
         let brideAcoountCopy = function(){
-            var brideAccount =  document.getElementById("bride-account");            
+            let brideAccount =  document.getElementById("bride-account");
             copyToClipboard(brideAccount.value);
             alert("계좌번호가 복사되었습니다.");
 
         }
 
         let copyToClipboard = function(text) {
-            var sampleTextarea = document.createElement("textarea");
+            let sampleTextarea = document.createElement("textarea");
             document.body.appendChild(sampleTextarea);
             sampleTextarea.value = text; 
             sampleTextarea.select();
@@ -490,31 +438,17 @@
 
         // 카드 이미지 크기 조정
         function adjustImageSize() {
-            var cardImages = document.querySelectorAll('.card-img-top');
+            let cardImages = document.querySelectorAll('.card-img-top');
 
             cardImages.forEach(function(image) {
-                var card = image.closest('.card');
-                var windowHeight = window.innerHeight;
-                var targetHeight = windowHeight * 3 / 4;
+                let card = image.closest('.card');
+                let windowHeight = window.innerHeight;
+                let targetHeight = windowHeight * 3 / 4;
                 image.style.maxHeight = targetHeight + 'px';
             });
         }
         adjustModalPosition();
         adjustImageSize();
-        // 초기 실행
-        // adjustImageSize();
-
-        // // 브라우저 리사이즈 시 카드 이미지 크기 조정
-        // window.addEventListener('resize', adjustImageSize);
-
-        // $(window).on('resize', function() {
-        //     adjustModalPosition();
-        //     adjustImageSize();
-        // });
-
-        window.addEventListener('resize', adjustModalPosition, adjustImageSize);
-
-
 
     </script>
 </body>
