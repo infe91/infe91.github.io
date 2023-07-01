@@ -16,7 +16,10 @@
   }
   .counter .sq .bord {
       border-radius: 15%;
-      border: 2px solid #e66b6b;
+      /*border: 1px solid #e66b6b;*/
+      border: 1px solid #cacaca;
+
+
       padding: 15px 1px;
       margin-right: auto;
       text-indent: 0px;
