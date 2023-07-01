@@ -354,7 +354,8 @@
             <h1 class="h1 text-center pb-3 ww-title">마음 전하실 곳</h1>
 
             <!-- 신랑 계좌 -->
-            <input type="text" id="groom-account" value="110307312882 신한" hidden>
+            <input type="text" id="groom-account" value="874210129891 국민" hidden>
+            <input type="text" id="groom-account2" value="290210176491 국민" hidden>
             <!-- 신부 계좌-->
             <input type="text" id="bride-account" value="110380097927 신한" hidden>
 
@@ -364,8 +365,8 @@
                         신랑측 (정인철) 계좌번호
                     </button>
                     <ul class="dropdown-menu">
-                        <li onclick="groomAcoountCopy()"><a class="dropdown-item" >신한은행 110-307-312882</a></li>
-                        <li><a class="dropdown-item" href = "https://qr.kakaopay.com/Ej7xsYTbD">카카오페이 <img class="kakaopay-icon" src="./images/kakaopay.png"/></a></li>
+                        <li onclick="groomAcoountCopy()"><a class="dropdown-item" >국민 874-21-0129-891 정병영</a></li>
+                        <li onclick="groomAcoountCopy2()"><a class="dropdown-item" >국민 290-21-0176-491 배경자</a></li>
                     </ul>
                 </div>
             </div>
@@ -439,6 +440,14 @@
 
         let groomAccount =  document.getElementById("groom-account");
         copyToClipboard(groomAccount.value);
+        alert("계좌번호가 복사되었습니다.");
+
+    }
+
+    let groomAcoountCopy2 = function(){
+
+        let groomAccount2 =  document.getElementById("groom-account2");
+        copyToClipboard(groomAccount2.value);
         alert("계좌번호가 복사되었습니다.");
 
     }
