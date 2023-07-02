@@ -240,6 +240,11 @@
                             </div>
                             <div class="carousel-item">
                                 <div class="card">
+                                    <img src="./images/IMG_0483.JPG" class="card-img-top" alt="IMG_0483">
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card">
                                     <img src="./images/IMG_0410.JPG" class="card-img-top" alt="IMG_0410">
                                 </div>
                             </div>
@@ -271,6 +276,11 @@
                             <div class="carousel-item">
                                 <div class="card">
                                     <img src="./images/IMG_0561.JPG" class="card-img-top" alt="IMG_0561">
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card">
+                                    <img src="./images/IMC_0999.PNG" class="card-img-top" alt="IMG_0999">
                                 </div>
                             </div>
                         </div>
@@ -467,8 +477,10 @@
             cardImages.forEach(function(image) {
                 let card = image.closest('.card');
                 let windowHeight = window.innerHeight;
-                let targetHeight = windowHeight * 3 / 4;
+                let targetHeight = windowHeight * 1 / 2;
                 image.style.maxHeight = targetHeight + 'px';
+
+
             });
         }
         adjustModalPosition();
